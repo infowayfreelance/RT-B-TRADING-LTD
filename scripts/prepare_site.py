@@ -16,5 +16,11 @@ with ZipFile(root/"rtb-trading-homepage.zip") as z:
             continue
         target.parent.mkdir(parents=True,exist_ok=True)
         target.write_bytes(z.read(name))
-print("Original site assets extracted")
 
+# Match the mobile menu's close breakpoint to the responsive header CSS.
+script_path = root/"public"/"app.js"
+script = script_path.read_text(encoding="utf-8")
+if "window.innerWidth > 950" not in script:
+    raise RuntimeError("Mobile menu breakpoint not found in original script")
+script_path.write_text(script.replace("window.innerWidth > 950", "window.innerWidth > 1180"), encoding="utf-8")
+print("Original site assets extracted and responsive menu breakpoint aligned")
