@@ -1,2 +1,11 @@
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 import Script from "next/script";
-export default function HomePage(){return (<><div dangerouslySetInnerHTML={{__html:"\n  <a class=\"skip-link\" href=\"#main\">Skip to main content</a>\n  <div class=\"top-strip\">\n    <div class=\"shell strip-inner\">\n      <div class=\"strip-location\"><span class=\"status-dot\" aria-hidden=\"true\"></span> STOKE-ON-TRENT, UNITED KINGDOM</div>\n      <div class=\"strip-right\">BUILDING &amp; TRADE ENQUIRIES <span class=\"strip-slash\">/</span> <a href=\"#contact\">LET'S TALK <span aria-hidden=\"true\">â†—</span></a></div>\n    </div>\n  </div>\n\n  <header class=\"site-header\" id=\"top\">\n    <div class=\"shell header-inner\">\n      <a class=\"brand\" href=\"#top\" aria-label=\"RT&B Trading Ltd â€“ Home\">\n        <span class=\"brand-mark\" aria-hidden=\"true\"><i></i><i></i><i></i></span>\n        <span class=\"brand-lockup\"><strong>RT&amp;B</strong><small>TRADING LTD</small></span>\n      </a>\n      <nav class=\"desktop-nav\" aria-label=\"Main navigation\">\n        <a href=\"#services\">Our Services</a>\n        <a href=\"#materials\">Materials</a>\n        <a href=\"#approach\">Our Approach</a>\n        <a href=\"#contact\">Contact</a>\n      </nav>\n      <a class=\"header-cta\" href=\"#contact\">START A CONVERSATION <span aria-hidden=\"true\">â†—</span></a>\n      <button class=\"menu-toggle\" type=\"button\" aria-controls=\"mobile-menu\" aria-expanded=\"false\" aria-label=\"Open navigation menu\"><span></span><span></span></bu¶»§q«^
+export default function HomePage() {
+  const html = readFileSync(join(process.cwd(), "site-original.html"), "utf8");
+  let body = html.match(/<body[^>]*>([\s\S]*?)<\/body>/i)?.[1] ?? "";
+  body = body.replace(/<script\b[^>]*\bsrc=["'](?:\.\/)?app\.js["'][^>]*>\s*<\/script>/gi, "");
+  body = body.replace(/(src|href)=(["'])assets\//gi, "$1=$2/assets/");
+  return <><div dangerouslySetInnerHTML={{ __html: body }} /><Script src="/app.js" strategy="afterInteractive" /></>;
+}
+

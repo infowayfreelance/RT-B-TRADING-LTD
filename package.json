@@ -1,10 +1,11 @@
 {
   "name": "rtb-trading-nextjs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "prebuild": "python3 scripts/prepare_site.py",
     "build": "next build",
+    "dev": "python3 scripts/prepare_site.py && next dev",
     "start": "next start"
   },
   "dependencies": {
