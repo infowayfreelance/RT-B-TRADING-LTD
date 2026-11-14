@@ -1,0 +1,20 @@
+/* Separate pages and navigation only; homepage colours and styling stay intact. */
+.desktop-nav{gap:clamp(12px,1.55vw,25px)}
+.desktop-nav a[aria-current="page"],.mobile-nav a[aria-current="page"],.footer-nav a[aria-current="page"]{color:#c47432}
+.subpage-intro{background:#10251f;color:#f8f7f2;padding:clamp(78px,10vw,146px) 0 clamp(72px,8vw,112px)}
+.subpage-intro h1{font:800 clamp(70px,9vw,150px)/.86 var(--display);letter-spacing:-.015em;margin:25px 0 28px;text-transform:uppercase;max-width:1120px}
+.subpage-intro p{font-size:clamp(17px,1.5vw,21px);line-height:1.7;max-width:700px;color:#d6ded7}
+.subpage-back{display:inline-block;font-weight:800;font-size:11px;letter-spacing:.12em;margin-top:25px;border-bottom:1px solid #eaa258;padding-bottom:9px}
+.subpage-detail{background:#f5f3ed}
+.subpage-detail-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:70px;align-items:start;margin-top:38px}
+.subpage-detail h2{font:800 clamp(60px,6vw,108px)/.9 var(--display);margin:0}
+.subpage-detail p{font-size:18px;line-height:1.85;color:#405047;margin:0 0 25px}
+.subpage-detail h3{font-size:13px;letter-spacing:.12em;margin-top:38px}
+.subpage-detail ul{line-height:2;color:#405047;padding-left:23px;margin-bottom:40px}
+.subpage-cta{background:#15251f;color:white;padding:clamp(75px,9vw,125px) 0}
+.subpage-cta-inner{display:flex;align-items:center;justify-content:space-between;gap:40px}
+.subpage-cta h2{font:800 clamp(58px,6vw,100px)/.88 var(--display);margin:18px 0 24px}
+.subpage-cta h2 span{color:#f0a051}
+.subpage-cta p{max-width:500px;color:#d6ded7;font-size:16px;line-height:1.7}
+@media(max-width:1180px){.desktop-nav,.header-cta{display:none}.menu-toggle{display:flex}}
+@media(max-width:740px){.subpage-intro h1{font-size:clamp(55px,12vw,83px)}.subpage-detail-grid{grid-template-columns:1fr;gap:30px}.subpage-cta-inner{flex-direction:column;align-items:flex-start}.subpage-detail h2{font-size:clamp(58px,10vw,85px)}}
