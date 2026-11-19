@@ -22,5 +22,12 @@ script_path = root/"public"/"app.js"
 script = script_path.read_text(encoding="utf-8")
 if "window.innerWidth > 950" not in script:
     raise RuntimeError("Mobile menu breakpoint not found in original script")
-script_path.write_text(script.replace("window.innerWidth > 950", "window.innerWidth > 1180"), encoding="utf-8")
-print("Original site assets extracted and responsive menu breakpoint aligned")
+script = script.replace("window.innerWidth > 950", "window.innerWidth > 1180")
+copy_start = script.find("const copyEmail = document.getElementById('copy-email');")
+if copy_start != -1:
+    copy_end = script.find("});", copy_start)
+    if copy_end == -1:
+        raise RuntimeError("Could not safely remove the obsolete email-prefix copy handler")
+    script = script[:copy_start] + script[copy_end + 3:]
+script_path.write_text(script, encoding="utf-8")
+print("Original site assets extrac¶»§q«^

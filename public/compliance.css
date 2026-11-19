@@ -1,0 +1,14 @@
+/* RT&B legal, map privacy and cookie controls */
+.contact-email a{display:inline-block;color:inherit;text-decoration:none;font-family:var(--display);font-size:clamp(46px,5.4vw,78px);font-weight:800;line-height:1;letter-spacing:-.025em;overflow-wrap:anywhere}
+.contact-email a:hover{text-decoration:underline;text-decoration-color:var(--orange);text-underline-offset:7px}
+.map-consent-shell{position:relative;width:100%;min-height:320px;background:#e9e8df;overflow:hidden}
+.contact-map{display:block;width:100%;height:320px;border:0;background:#e9e8df}
+.map-consent-placeholder{min-height:320px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:18px;padding:28px;text-align:center;background:#e9e8df;color:#15251f}
+.map-consent-placeholder[hidden]{display:none}
+.map-consent-placeholder p{max-width:330px;line-height:1.6;font-size:14px}
+.map-consent-placeholder button{border:0;background:#15251f;color:#fff;padding:14px 19px;font:700 11px var(--sans);letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+.footer-legal{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-top:18px;padding-bottom:20px;border-top:1px solid #5260575c}
+.footer-legal-links{display:flex;flex-wrap:wrap;gap:12px 26px}
+.footer-legal a,.cookie-settings-link{color:#b9c3ba;font-size:10px;font-weight:700;letter-spacing:.07em;text-decoration:none}
+.footer-legal a:hover,.cookie-settings-link:hover{color:#f0a051;text-decoration:underline}
+.cookie-settings-link¶»§q«^
