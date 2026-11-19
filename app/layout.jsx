@@ -3,7 +3,7 @@ export const metadata = {
  metadataBase:new URL("https://rtbtradingltd.co.uk"),
  title:{default:"RT&B Trading Ltd | Construction & Building Materials in Stoke-on-Trent",template:"%s"},
  description:"RT&B Trading Ltd supports construction projects and building material enquiries in Stoke-on-Trent.",
- icons:{icon:"/assets/favicon.svg"}
+ manifest:"/manifest.webmanifest"
 };
 export default function RootLayout({children}){
  return <html lang="en-GB"><head>
